@@ -1,0 +1,36 @@
+# 技术调研报告
+
+任务编号：sms-model-comparison-supplement
+
+## 开发需求
+
+补充中文短信分类模型选型调研：对比字符 TF-IDF + LogisticRegression baseline 和字符级 Transformer Encoder。优先搜索 scikit-learn.org 官方文本特征、数据泄漏和F1文档，以及 pytorch.org TransformerEncoder 官方文档。调研中文字符适配、相同数据划分、Accuracy/Precision/Recall/F1及开销。不得引用不存在的搜索来源或虚构实验优势。本地实测如下：{"baseline": {"accuracy": 0.976, "precision": 0.9753661784287616, "recall": 0.9766666666666667, "f1": 0.9760159893404398, "confusion_matrix": [[1463, 37], [35, 1465]]}, "transformer": {"accuracy": 0.9713333333333334, "precision": 0.9688328912466844, "recall": 0.974, "f1": 0.9714095744680851, "confusion_matrix": [[1453, 47], [39, 1461]]}, "best_epoch": 11, "best_validation_f1": 0.9735697557711609, "training_seconds": 30.19}
+
+## 搜索关键词
+
+中文短信分类 字符TF-IDF LogisticRegression baseline 与 字符级Transformer Encoder 对比 相同数据划分 中文字符适配 公平评估 Accuracy Precision Recall F1 开销, scikit-learn 官方文档 文本特征提取 数据泄漏 F1 中文字符适配, pytorch 官方文档 TransformerEncoder 中文字符级分类 公平评估
+
+## 调研结论
+
+给定搜索结果仅覆盖 scikit-learn TfidfTransformer 及一般 TF-IDF/LR 文本分类资料，未检索到 scikit-learn 数据泄漏/F1 或 pytorch.org TransformerEncoder 官方结果。本地提供指标显示字符 TF-IDF+LR baseline 的 Accuracy/Precision/Recall/F1 均略高于字符级 Transformer；文献仅支持 LR baseline 低成本，不足以证明模型优劣。
+
+## 实现建议
+
+- 来源质量：结果1为 scikit-learn 官方 TfidfTransformer 文档，可支持 TF-IDF 特征变换；结果3为 sklearn 中文版文本处理；结果2/4为教程/课程文章，结果5为 TF-IDF+LR 二分类 baseline 文献。未提供数据泄漏、F1 或 PyTorch TransformerEncoder 官方文档结果，不能引用未列出链接。
+- 本地实测（需确认同一训练/验证/测试划分与固定随机种子）：baseline accuracy=0.976000, precision=0.975366, recall=0.976667, F1=0.976016, confusion=[[1463,37],[35,1465]]；Transformer accuracy=0.971333, precision=0.968833, recall=0.974000, F1=0.971410, confusion=[[1453,47],[39,1461]], best_epoch=11, best_validation_F1=0.973570, training_seconds=30.19。baseline 本地指标四项均高于 Transformer，不能宣称 Transformer 优于 baseline；baseline 训练耗时未提供，开销对比不完整。
+- 中文字符适配：字符级方案可避免分词依赖，但给定搜索结果未含中文短信字符级官方细节；实现需明确字符/字符n-gram、词表、UNK、截断长度和padding，并在报告中记录。TF-IDF 仅应在训练集 fit、验证/测试集 transform，避免数据泄漏；该要求需以后续查到的 sklearn 官方数据泄漏文档复核。
+- 建议：将字符 TF-IDF+LR 作为验收 baseline 和优先候选；Transformer 需补充 PyTorch TransformerEncoder 官方文档、固定划分复验、调参与资源统计后再决定。结果5仅说明 TF-IDF+LR 可作为低成本 baseline，不是中文短信或 Transformer 对比结论。
+
+## 参考来源
+
+- https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html
+- http://sklearn123.com/SecondSection/2.3-Working%20With%20Text%20Data/
+- https://www.datacamp.com/zh/tutorial/text-classification-python
+- https://developer.cloud.tencent.com/article/2440187
+- https://fupubco.com/futech/article/view/1147
+
+## 技术方案采纳情况
+
+尚未记录采纳情况。
+
+说明：本报告由任务中保存的调研内容整理导出，不代表重新搜索或重新验证来源。

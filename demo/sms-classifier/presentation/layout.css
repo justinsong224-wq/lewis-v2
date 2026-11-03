@@ -1,0 +1,11 @@
+[hidden] { display: none !important; }
+#batch-table th:nth-child(n+2), #batch-table td:nth-child(n+2) { white-space: nowrap; word-break: normal; }
+#batch-table th:nth-child(2) { min-width: 85px; }
+#batch-table th:nth-child(n+3) { min-width: 95px; }
+#batch-table .label-normal { color: #137548; font-weight: 700; background: #effbf4; }
+#batch-table .label-risk { color: #ba3428; font-weight: 700; background: #fff2ef; }
+.view-tabs { display: flex; gap: 6px; margin: 24px 0 0; padding: 5px; background: #e5ebf4; border-radius: 10px; }
+.view-tabs button { flex: 1; padding: 11px 16px; border: 0; background: transparent; color: #52627b; font-weight: 600; }
+.view-tabs button[aria-selected="true"] { background: white; color: #12305c; box-shadow: 0 2px 6px #12305c12; }
+.view-tabs button:focus-visible { outline: 2px solid #1d4f9b; outline-offset: 2px; }
+#prediction-view > .card:first-child::before { content: '单条短信预测'; display: block; font-size: 19px; font-weight: 700; color: #12305c; margin-bottom: 16px; }

@@ -1,0 +1,215 @@
+{
+  "results": [
+    {
+      "index": 1,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.051107000559568405,
+      "ham_probability": 0.9488930106163025
+    },
+    {
+      "index": 2,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9995692372322083,
+      "ham_probability": 0.0004307744384277612
+    },
+    {
+      "index": 3,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.005751768592745066,
+      "ham_probability": 0.9942482709884644
+    },
+    {
+      "index": 4,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9993677735328674,
+      "ham_probability": 0.0006322148838080466
+    },
+    {
+      "index": 5,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.005845397710800171,
+      "ham_probability": 0.9941546320915222
+    },
+    {
+      "index": 6,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.6647223830223083,
+      "ham_probability": 0.33527764678001404
+    },
+    {
+      "index": 7,
+      "expected": "ham",
+      "label": "spam",
+      "spam_probability": 0.6911290884017944,
+      "ham_probability": 0.30887091159820557
+    },
+    {
+      "index": 8,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.996311604976654,
+      "ham_probability": 0.003688378492370248
+    },
+    {
+      "index": 9,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.0036177660804241896,
+      "ham_probability": 0.9963822364807129
+    },
+    {
+      "index": 10,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.999782383441925,
+      "ham_probability": 0.00021760290837846696
+    },
+    {
+      "index": 11,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.39510607719421387,
+      "ham_probability": 0.6048938632011414
+    },
+    {
+      "index": 12,
+      "expected": "spam",
+      "label": "ham",
+      "spam_probability": 0.2503145933151245,
+      "ham_probability": 0.7496854066848755
+    },
+    {
+      "index": 13,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.09091949462890625,
+      "ham_probability": 0.9090805649757385
+    },
+    {
+      "index": 14,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9995779395103455,
+      "ham_probability": 0.00042204131023027003
+    },
+    {
+      "index": 15,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.006800448521971703,
+      "ham_probability": 0.9931995272636414
+    },
+    {
+      "index": 16,
+      "expected": "spam",
+      "label": "ham",
+      "spam_probability": 0.0066222334280610085,
+      "ham_probability": 0.9933777451515198
+    },
+    {
+      "index": 17,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.02179730124771595,
+      "ham_probability": 0.978202760219574
+    },
+    {
+      "index": 18,
+      "expected": "spam",
+      "label": "ham",
+      "spam_probability": 0.334950715303421,
+      "ham_probability": 0.6650492548942566
+    },
+    {
+      "index": 19,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.023175843060016632,
+      "ham_probability": 0.9768241047859192
+    },
+    {
+      "index": 20,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9298648834228516,
+      "ham_probability": 0.07013504207134247
+    },
+    {
+      "index": 21,
+      "expected": "ham",
+      "label": "spam",
+      "spam_probability": 0.9850535988807678,
+      "ham_probability": 0.014946461655199528
+    },
+    {
+      "index": 22,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9098103642463684,
+      "ham_probability": 0.09018967300653458
+    },
+    {
+      "index": 23,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.00097812176682055,
+      "ham_probability": 0.9990218877792358
+    },
+    {
+      "index": 24,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9427307844161987,
+      "ham_probability": 0.05726926773786545
+    },
+    {
+      "index": 25,
+      "expected": "ham",
+      "label": "spam",
+      "spam_probability": 0.9880672693252563,
+      "ham_probability": 0.011932696215808392
+    },
+    {
+      "index": 26,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9230105876922607,
+      "ham_probability": 0.07698939740657806
+    },
+    {
+      "index": 27,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.11931692063808441,
+      "ham_probability": 0.8806831240653992
+    },
+    {
+      "index": 28,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9856199026107788,
+      "ham_probability": 0.014380085282027721
+    },
+    {
+      "index": 29,
+      "expected": "ham",
+      "label": "ham",
+      "spam_probability": 0.08120419830083847,
+      "ham_probability": 0.9187957644462585
+    },
+    {
+      "index": 30,
+      "expected": "spam",
+      "label": "spam",
+      "spam_probability": 0.9517224431037903,
+      "ham_probability": 0.048277582973241806
+    }
+  ],
+  "scope": "demo-only, not test metrics"
+}

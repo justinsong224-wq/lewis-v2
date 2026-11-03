@@ -1,0 +1,6 @@
+开发可启动的中文“短信垃圾信息分类”小应用，FastAPI + 原生 HTML/CSS/JS，app.py 导出 app，一条 uvicorn app:app 命令启动。无 CDN、无前端构建、无登录、无训练。
+已授权复用的真实资产在环境变量 SMS_ASSET_DIR 指向目录：src/inference.py 的 Predictor(checkpoint).predict(text) 返回 label(ham/spam)、spam_probability、ham_probability；src/model.py 为真实 Transformer；outputs/transformer.pt 已训练，outputs/metrics.json 和 dataset_stats.json 为真实历史实验数据。将 SMS_ASSET_DIR 插入 sys.path 后 from src.inference import Predictor，CPU 推理即可；不得硬编码/伪造分类结果、指标，不重新生成资产。页面说明模型由原短信项目预训练，Lewis 负责本轮软件开发。
+GET / 提供页面；POST /predict 接收 JSON {text:str}，trim 后 1—5000 字符，否则 422，返回 Predictor 的原始三字段；GET /metrics 返回 {metrics:原 metrics.json 内容,dataset:原 dataset_stats.json 内容}。模型加载缓存，只加载一次；路径用 Path(__file__) 确定静态文件。配置缺失应清晰报错，不返回假预测。
+页面：深蓝页头、浅色卡片、标题“短信垃圾信息分类”；“正常短信示例”“垃圾短信示例”按钮填充文本；带 label 的英文短信输入框、“开始预测”按钮；结果显示中文正常/垃圾、ham/spam、两类概率条。实验区显示 Transformer 与 baseline 的真实 accuracy/f1 和数据划分，简短模型流程（分词→嵌入/位置编码→Transformer Encoder→池化→分类）及“仅英文、概率未经校准、可能误判”限制。不要前端技术术语副标题；用户内容使用 textContent，适配窄屏，有加载/错误提示。
+范围：app.py、static/index.html、static/style.css、static/app.js、requirements.txt；test 角色生成 test_app.py，writer 生成 README。总代码紧凑约 300 行，模型核心已复用无需生成。本轮只有单条预测，不做 CSV。
+测试用真实模型，不能 mock 掉推理；覆盖两条短信、概率范围/和、空白/超长、页面和实验数据。测试环境有 SMS_ASSET_DIR。运行 python -m uvicorn app:app --port 8001。调研只核对 FastAPI 静态页、缓存推理和输入校验；规划只 dev→test→writer→review 四阶段；只返回严格文件块，不要额外文字，各角色简短。
